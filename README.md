@@ -65,3 +65,11 @@ Fájl visszaállítása a szülő branch állapotára:
 Fájl törlése Git verziókövetésből:
 
 `git rm -r --cached [FILE/DIRECTORY]`
+
+### Symfony
+
+Make entity and repository: `php bin/console make:entity`
+
+Migrate database: `php bin/console make:migration`
+
+Make a Controller: `symfony console make:controller XYZController`
