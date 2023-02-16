@@ -66,6 +66,10 @@ Fájl törlése Git verziókövetésből:
 
 `git rm -r --cached [FILE/DIRECTORY]`
 
+### Snap
+
+Install .snap file: `sudo snap install --dangerous [FILE.snap]`
+
 ### Symfony
 
 Make entity and repository: `php bin/console make:entity`
