@@ -1,0 +1,19 @@
+{
+    "name": "your-vendor/your-package",
+    "description": "A short description of your package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "you@example.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "YourVendor\\YourPackage\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
