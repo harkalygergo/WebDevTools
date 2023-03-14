@@ -16,3 +16,9 @@ class Note
 
     }
 }
+
+// run and timing
+$start = microtime(true);
+(new Note())->init();
+$end = microtime(true);
+$time = number_format(($end - $start), 2);
