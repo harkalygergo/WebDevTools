@@ -22,6 +22,10 @@ PHP Standards based packages
 
 - https://thephpleague.com/
 
+PHP Debug tools
+
+- https://phpstan.org/
+
 Server test
 
 - https://bench.sh/
