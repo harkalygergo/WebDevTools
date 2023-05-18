@@ -6,9 +6,9 @@ Useful files and informations for any developer.
 
 ## Usage
 
-Under `useful` folder there are multipe files which can be used in any (new) project.
+Under `useful` folder there are multiple files which can be used in any (new) project.
 
- - *typography-content.html*: copy this content into your CMS to see unirsally what basic elements looks like
+ - *typography-content.html*: copy this content into your CMS to see universally what basic elements looks like
 
 ## Useful links
 
