@@ -74,6 +74,12 @@ Fájl törlése Git verziókövetésből:
 
 `git rm -r --cached [FILE/DIRECTORY]`
 
+### File
+
+Resize and rename images in a directory.
+
+`i=1; for fi in ./*; do convert -resize 1500x1500 $fi $fi; mv "$fi" 202230702-Budapest-$i.png; i=$((i+1)); done`
+
 ### Snap
 
 Install .snap file: `sudo snap install --dangerous [FILE.snap]`
