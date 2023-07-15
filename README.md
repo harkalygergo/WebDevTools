@@ -76,9 +76,24 @@ Fájl törlése Git verziókövetésből:
 
 ### File
 
-Resize and rename images in a directory.
+Rename files and resize images in directory.
 
-`i=1; for fi in ./*; do convert -resize 1500x1500 $fi $fi; mv "$fi" 202230702-Budapest-$i.png; i=$((i+1)); done`
+```
+i=1;
+for file in ./*;
+    do
+        filename=$(basename "$file");
+        extension="${filename##*.}";
+        file_mime=$(file --mime-type "${file}");
+        mime=$(echo "$file_mime" | awk '{ print $2 }');
+        if [[ "$mime" == "image/jpeg" || "$mime" == "image/png" ]]; then
+            convert -resize 1500x1500 $file $file;
+            echo "$file image converted";
+        fi
+        mv "$file" 20230702-Budapest-$i."${extension}";
+        i=$((i+1));
+    done
+```
 
 ### Snap
 
