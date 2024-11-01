@@ -37,6 +37,12 @@ sudo snap refresh
 
 df -h
 
+printf "\n\n check reboot is needed or not \n"
+sudo needrestart -r i
+if [ -f /var/run/reboot-required ]; then
+	printf "\n\n REBOOT REQUIRED \n"
+fi
+
 printf "\n\n start Apache2 and MySQL \n"
 sudo netstat -nap | grep apache2 | grep :80;
 sudo systemctl status apache2 | grep "Main PID"
