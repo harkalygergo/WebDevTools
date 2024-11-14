@@ -1,7 +1,31 @@
 #!/bin/bash
 df -h
 
-printf "\n\n show xsession-errors \n";
+printf "\n\n CREATE BACKUP FROM LOCALHOST DATABASES \n"
+USER="root"
+PASSWORD=""
+HOST="localhost"
+# Backup directory
+BACKUP_DIR="/backup"
+mkdir -p "$BACKUP_DIR"
+# Date format for backup files
+DATE=$(date +"%Y.%m.%d.%H:%M:%S")
+# Get a list of all databases
+DATABASES=$(mysql -u "$USER" -h "$HOST" -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema|mysql|sys)")
+# Loop through each database and back it up
+for DB in $DATABASES; do
+  BACKUP_FILE="$BACKUP_DIR/backup_${DATE}_${DB}.sql"
+  echo "Backing up $DB to $BACKUP_FILE"
+  mysqldump -u "$USER" -h "$HOST" "$DB" > "$BACKUP_FILE"
+  # Check if the backup was successful
+  if [ $? -eq 0 ]; then
+    echo "Backup of $DB successful!"
+  else
+    echo "Backup of $DB failed!"
+  fi
+done
+
+printf "\n\n SHOW XSESSION-ERRORS \n";
 cd
 tail -n 30 .xsession-errors
 printf "\n\n remove xsession-errors \n";
