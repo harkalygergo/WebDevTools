@@ -14,12 +14,22 @@ DATE=$(date +"%Y.%m.%d.%H:%M:%S")
 DATABASES=$(mysql -u "$USER" -h "$HOST" -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema|mysql|sys)")
 # Loop through each database and back it up
 for DB in $DATABASES; do
-  BACKUP_FILE="$BACKUP_DIR/backup_${DATE}_${DB}.sql"
+  BACKUP_FILE="$BACKUP_DIR/${DB}_backup_$DATE.sql"
   echo "Backing up $DB to $BACKUP_FILE"
+  # Dump the database
   mysqldump -u "$USER" -h "$HOST" "$DB" > "$BACKUP_FILE"
   # Check if the backup was successful
   if [ $? -eq 0 ]; then
     echo "Backup of $DB successful!"
+    # Compress the SQL file
+    gzip "$BACKUP_FILE"
+    # Check if compression was successful and remove the original .sql file
+    if [ $? -eq 0 ]; then
+      echo "Compression of $BACKUP_FILE successful! Saved as $BACKUP_FILE.gz"
+      rm "$BACKUP_FILE"
+    else
+      echo "Compression of $BACKUP_FILE failed!"
+    fi
   else
     echo "Backup of $DB failed!"
   fi
