@@ -26,12 +26,11 @@ for DB in $DATABASES; do
     # Check if compression was successful and remove the original .sql file
     if [ $? -eq 0 ]; then
       echo "Compression of $BACKUP_FILE successful! Saved as $BACKUP_FILE.gz"
-      rm "$BACKUP_FILE"
     else
-      echo "Compression of $BACKUP_FILE failed!"
+      echo "Compression of $BACKUP_FILE FAILED!"
     fi
   else
-    echo "Backup of $DB failed!"
+    echo "Backup of $DB FAILED!"
   fi
 done
 
