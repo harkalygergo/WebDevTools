@@ -43,6 +43,10 @@ rm .xsession-errors
 printf "\n\n empty php_error_log \n";
 sudo cp /dev/null /opt/lampp/logs/php_error_log
 
+printf "\n\n composer and npm update \n"
+composer update;
+npm update;
+
 printf "\n clear cache \n"
 cd .cache
 shopt -s extglob
