@@ -85,6 +85,9 @@ sudo netstat -nap | grep apache2 | grep :80;
 sudo systemctl status apache2 | grep "Main PID"
 sudo systemctl restart apache2.service; sudo systemctl restart mysql.service;
 
+printf "\n\n update certificates \n"
+sudo update-ca-certificates
+
 printf "\n\n start redshift \n"
 redshift -l 47.49:19.04 -t 5500:3000 -g 0.80 -m randr -b 0.85 -v &
 
