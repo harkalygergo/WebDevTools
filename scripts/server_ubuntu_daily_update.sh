@@ -3,6 +3,7 @@
 #/etc/init.d/clamav-daemon status
 #sudo /etc/init.d/dovecot status
 # clean server
+df -h
 sudo rm -r /var/log/*.gz;
 sudo rm -r /tmp/*;
 #sudo rm -r .cache/;
@@ -15,6 +16,7 @@ sudo apt-get upgrade;
 sudo apt-get dist-upgrade;
 sudo apt autoremove;
 sudo apt-get clean;
+df -h
 sudo needrestart -r i
 if [ -f /var/run/reboot-required ]; then
   echo 'reboot required'
