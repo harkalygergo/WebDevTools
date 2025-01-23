@@ -4,6 +4,9 @@
 #sudo /etc/init.d/dovecot status
 # clean server
 df -h
+printf "\n\n SHOW SIZE OF /var/log \n\n"
+du -h /var/log
+
 sudo rm -r /var/log/*.gz;
 sudo rm -r /tmp/*;
 #sudo rm -r .cache/;

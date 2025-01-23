@@ -1,5 +1,5 @@
 # WebDevTools
-###### Version: 2025.01.22.1
+###### Version: 2025.01.23.1
 
 Useful files and informations for any developer.
 
