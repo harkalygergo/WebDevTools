@@ -1,5 +1,5 @@
 # WebDevTools
-###### Version: 2025.01.28.1
+###### Version: 2025.01.28.2
 
 Useful files and information for any developer. It's a collection of useful tools, commands, and files for web development. It's free to use and modify. Feel free to contribute!
 
