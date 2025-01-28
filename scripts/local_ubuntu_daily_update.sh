@@ -89,7 +89,7 @@ printf "\n\n update certificates \n"
 sudo update-ca-certificates
 
 printf "\n\n start redshift \n"
-redshift -l 47.49:19.04 -t 5500:3000 -g 0.80 -m randr -b 0.85 -v &
+redshift -l 47.49:19.04 -t 5500:3000 -g 0.90 -m randr -b 0.90 -v &
 
 printf "\n\n start MailHog \n"
 ~/go/bin/MailHog &

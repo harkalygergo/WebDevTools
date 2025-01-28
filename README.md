@@ -1,7 +1,7 @@
 # WebDevTools
-###### Version: 2025.01.23.1
+###### Version: 2025.01.28.1
 
-Useful files and informations for any developer.
+Useful files and information for any developer. It's a collection of useful tools, commands, and files for web development. It's free to use and modify. Feel free to contribute!
 
 ---
 
@@ -30,26 +30,3 @@ PHP Debug tools
 Server test
 
 - https://bench.sh/
-
-## Useful commands
-
-### File
-
-Rename files and resize images in directory.
-
-```
-i=1;
-for file in ./*;
-    do
-        filename=$(basename "$file");
-        extension="${filename##*.}";
-        file_mime=$(file --mime-type "${file}");
-        mime=$(echo "$file_mime" | awk '{ print $2 }');
-        if [[ "$mime" == "image/jpeg" || "$mime" == "image/png" ]]; then
-            convert -resize 1500x1500 $file $file;
-            echo "$file image converted";
-        fi
-        mv "$file" 20230702-Budapest-$i."${extension}";
-        i=$((i+1));
-    done
-```
