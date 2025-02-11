@@ -43,10 +43,6 @@ rm .xsession-errors
 printf "\n\n empty php_error_log \n";
 sudo cp /dev/null /opt/lampp/logs/php_error_log
 
-printf "\n\n composer and npm update \n"
-composer update;
-npm update;
-
 printf "\n clear cache \n"
 cd .cache
 shopt -s extglob
@@ -62,7 +58,7 @@ sudo apt-get dist-upgrade;
 sudo apt autoremove;
 sudo apt-get clean;
 
-printf "\n\n removes old revisions of snaps \n"
+printf "\n\n *** removes old revisions of snaps *** \n"
 # CLOSE ALL SNAPS BEFORE RUNNING THIS
 set -eu
 snap list --all | awk '/disabled/{print $1, $3}' |
@@ -71,6 +67,20 @@ snap list --all | awk '/disabled/{print $1, $3}' |
     done
 sudo snap refresh --list
 sudo snap refresh
+
+
+printf "\n\n *** UPDATE COMPOSER AND COMPOSER UPDATE *** \n\n"
+composer --version
+composer self-update --stable
+composer --version
+composer update;
+
+printf "\n\n *** UPDATE NPM AND NPM UPDATE *** \n\n"
+npm -v
+npm install -g npm@latest
+npm install -g npm-check-updates
+npm -v
+npm update;
 
 df -h
 
