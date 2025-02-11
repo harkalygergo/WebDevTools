@@ -32,9 +32,15 @@ tail -n 20 /var/log/cron.log
 printf "\n\n *** SHOW BTMP LAST 20 ROWS *** \n\n"
 tail -n 20 /var/log/btmp
 
-printf "\n\n *** REMOVE LOGS *** \n\n"
+printf "\n\n *** EMPTY ROUNDCUBE IMAP AND SMTP LOGS *** \n\n"
+tail /var/log/roundcube/imap.log
+cat /dev/null > /var/log/roundcube/imap.log
+tail /var/log/roundcube/smtp.log
+cat /dev/null > /var/log/roundcube/smtp.log
+
+printf "\n\n *** REMOVE ZIPPED LOGS *** \n\n"
 sudo rm -r /var/log/*.gz;
-sudo rm -r /tmp/*;
+#sudo rm -r /tmp/*;
 #sudo rm -r .cache/;
 #mkdir .cache;
 # update server
