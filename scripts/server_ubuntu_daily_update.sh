@@ -29,8 +29,8 @@ tail -n 20 /var/log/kern.log
 printf "\n\n *** SHOW CRON LOG LAST 20 ROWS *** \n\n"
 tail -n 20 /var/log/cron.log
 
-printf "\n\n *** SHOW BTMP LAST 20 ROWS *** \n\n"
-tail -n 20 /var/log/btmp
+#printf "\n\n *** SHOW BTMP LAST 20 ROWS *** \n\n"
+#tail -n 20 /var/log/btmp
 
 printf "\n\n *** EMPTY ROUNDCUBE IMAP AND SMTP LOGS *** \n\n"
 tail /var/log/roundcube/imap.log

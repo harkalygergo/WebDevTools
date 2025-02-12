@@ -73,7 +73,7 @@ printf "\n\n *** UPDATE COMPOSER AND COMPOSER UPDATE *** \n\n"
 composer --version
 composer self-update --stable
 composer --version
-composer update;
+#composer update;
 
 printf "\n\n *** UPDATE NPM AND NPM UPDATE *** \n\n"
 npm -v
