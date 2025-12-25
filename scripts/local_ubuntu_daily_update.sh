@@ -71,7 +71,7 @@ sudo snap refresh
 
 printf "\n\n *** UPDATE COMPOSER AND COMPOSER UPDATE *** \n\n"
 composer --version
-composer self-update --stable
+#composer self-update --stable
 composer --version
 #composer update;
 
@@ -99,7 +99,7 @@ printf "\n\n update certificates \n"
 sudo update-ca-certificates
 
 printf "\n\n start redshift \n"
-redshift -l 47.49:19.04 -t 5500:3000 -g 0.90 -m randr -b 0.90 -v &
+redshift -l 47.49:19.04 -t 5700:2800 -g 1.0 -b 0.9:0.8 -m randr -v &
 
 printf "\n\n start MailHog \n"
 ~/go/bin/MailHog &
