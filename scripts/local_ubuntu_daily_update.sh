@@ -93,7 +93,9 @@ fi
 printf "\n\n start Apache2 and MySQL \n"
 sudo netstat -nap | grep apache2 | grep :80;
 sudo systemctl status apache2 | grep "Main PID"
-sudo systemctl restart apache2.service; sudo systemctl restart mysql.service;
+sudo systemctl restart apache2.service;
+sudo systemctl restart mysql.service;
+sudo service php$(ls /etc/php | sort -V | tail -n1)-fpm restart;
 
 printf "\n\n update certificates \n"
 sudo update-ca-certificates
